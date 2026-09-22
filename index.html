@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[Nombre] · Sonidista y Productor Musical</title>
+<meta name="description" content="[Nombre] — Sonidista. Grabación, edición, mezcla y masterización para artistas y proyectos musicales. Escucha mi trabajo y hablemos de tu proyecto.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@600;700&display=swap" rel="stylesheet">
+<style>
+/* Hallmark · genre: atmospheric · macrostructure: Portfolio Grid · theme: Midnight · nav: N5 · footer: Ft5 · enrichment: none · anchor hue: warm amber */
+/* Hallmark · pre-emit critique: P5 H5 E4 S5 R5 V5 */
+
+:root {
+  /* color */
+  --color-paper: oklch(16% 0.012 45);
+  --color-paper-2: oklch(20% 0.014 45);
+  --color-paper-3: oklch(25% 0.016 45);
+  --color-ink: oklch(93% 0.008 60);
+  --color-ink-soft: oklch(77% 0.012 60);
+  --color-accent: oklch(76% 0.16 72);
+  --color-accent-strong: oklch(66% 0.17 58);
+  --color-on-accent: oklch(22% 0.03 50);
+  --color-focus: oklch(84% 0.16 72);
+  --color-bloom-1: oklch(56% 0.16 55);
+  --color-bloom-2: oklch(50% 0.2 22);
+  --color-line: oklch(90% 0.01 60 / 0.12);
+  --color-line-soft: oklch(90% 0.01 60 / 0.2);
+  --color-accent-line: oklch(76% 0.16 72 / 0.45);
+  --color-hover: oklch(90% 0.01 60 / 0.08);
+  --color-glass: oklch(18% 0.014 45 / 0.55);
+  --color-glass-line: oklch(90% 0.01 60 / 0.1);
+  --shadow-glow: 0 12px 40px oklch(50% 0.15 50 / 0.28);
+  /* font */
+  --font-display: "Inter Tight", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  /* space (4pt) */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4.5rem;
+  /* text */
+  --text-display: clamp(2.9rem, 6vw + 1rem, 6rem);
+  --text-h2: clamp(1.7rem, 3vw + 0.5rem, 2.4rem);
+  --text-lg: 1.125rem;
+  --text-base: 1rem;
+  --text-sm: 0.875rem;
+  /* easing */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  /* radius */
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+  /* duration */
+  --dur-fast: 140ms;
+  --dur-base: 240ms;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { overflow-x: clip; scroll-behavior: smooth; }
+body {
+  overflow-x: clip;
+  font-family: var(--font-body);
+  background: var(--color-paper);
+  color: var(--color-ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+/* lienzo atmosférico: dos blooms cálidos, fijos, sin animación */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(60rem 42rem at 85% -12%, var(--color-bloom-1), transparent 60%),
+    radial-gradient(52rem 38rem at -12% 45%, var(--color-bloom-2), transparent 58%);
+}
+
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+img, iframe { display: block; max-width: 100%; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; overflow-wrap: anywhere; min-width: 0; }
+h1 { font-size: var(--text-display); line-height: 1.04; }
+h2 { font-size: var(--text-h2); }
+h3 { font-size: 16px; font-weight: 600; }
+p.lead { color: var(--color-ink-soft); font-size: var(--text-lg); max-width: 640px; }
+section { padding: var(--space-3xl) 0; }
+
+/* ---- Nav flotante (N5) ---- */
+.nav {
+  position: fixed; top: 16px; left: 50%; transform: translateX(-50%);
+  z-index: 50; width: min(1120px, calc(100% - 32px));
+  display: flex; align-items: center; justify-content: space-between; gap: 14px;
+  padding: 10px 10px 10px 20px;
+  border-radius: var(--radius-pill);
+  background: var(--color-glass);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--color-glass-line);
+}
+.nav .wordmark {
+  font-family: var(--font-display); font-weight: 700; font-size: 16px;
+  letter-spacing: -0.02em; color: var(--color-ink); text-decoration: none; white-space: nowrap;
+}
+.nav-links { display: flex; gap: 2px; align-items: center; }
+.nav-links a {
+  font-size: 14px; font-weight: 500; color: var(--color-ink-soft);
+  text-decoration: none; padding: 8px 13px; border-radius: var(--radius-pill);
+  transition: color var(--dur-fast) var(--ease-out), background var(--dur-fast) var(--ease-out);
+}
+.nav-links a:hover { color: var(--color-ink); background: var(--color-hover); }
+.nav-links a:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+
+/* ---- Botones ---- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font-family: var(--font-display); font-weight: 600; font-size: 15px; white-space: nowrap;
+  text-decoration: none; padding: 12px 22px; border-radius: var(--radius-pill);
+  background: var(--color-accent); color: var(--color-on-accent);
+  border: 1px solid transparent; cursor: pointer;
+  transition: background var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+}
+.btn:hover { background: var(--color-accent-strong); }
+.btn:active { transform: translateY(1px); }
+.btn:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 3px; }
+.btn.ghost { background: transparent; color: var(--color-ink); border-color: var(--color-line-soft); }
+.btn.ghost:hover { background: var(--color-hover); border-color: var(--color-line-soft); }
+.btn.sm { padding: 9px 16px; font-size: 14px; }
+
+/* ---- Hero ---- */
+.hero { padding: 180px 0 120px; text-align: center; }
+.hero .tag {
+  display: inline-block; font-size: 13px; font-weight: 600; color: var(--color-accent);
+  background: var(--color-hover); border: 1px solid var(--color-accent-line);
+  padding: 6px 14px; border-radius: var(--radius-pill); margin-bottom: 24px;
+}
+.hero h1 { margin: 0 auto 20px; max-width: 18ch; text-wrap: balance; }
+.hero p { font-size: var(--text-lg); color: var(--color-ink-soft); max-width: 560px; margin: 0 auto 32px; }
+.hero .ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.hero .fade { animation: fade-in 0.7s var(--ease-out) both; }
+.hero .fade.d2 { animation-delay: 0.12s; }
+.hero .fade.d3 { animation-delay: 0.24s; }
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+
+/* ---- Qué hago (proceso) ---- */
+.process { display: grid; gap: 14px; margin-top: var(--space-2xl); }
+@media (min-width: 900px) { .process { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.step {
+  background: var(--color-paper-2);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out), border-color var(--dur-base) var(--ease-out);
+}
+.step:hover { transform: translateY(-3px); border-color: var(--color-accent-line); box-shadow: var(--shadow-glow); }
+.step .num { font-family: var(--font-display); font-weight: 700; font-size: 14px; color: var(--color-accent); margin-bottom: 14px; }
+.step h3 { margin-bottom: 8px; }
+.step p { color: var(--color-ink-soft); font-size: 14.5px; }
+
+/* ---- Trabajos (grid de proyectos) ---- */
+.works { display: grid; gap: 18px; margin-top: var(--space-2xl); }
+@media (min-width: 800px) { .works { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.work {
+  background: var(--color-paper-2);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out), border-color var(--dur-base) var(--ease-out);
+}
+.work:hover { transform: translateY(-3px); border-color: var(--color-accent-line); box-shadow: var(--shadow-glow); }
+.work iframe { width: 100%; height: 352px; border: 0; }
+.work .cap { padding: 16px 20px; }
+.work .cap h3 { margin-bottom: 2px; }
+.work .cap p { color: var(--color-ink-soft); font-size: 14px; }
+.works-more { margin-top: var(--space-xl); text-align: center; }
+
+/* ---- Sobre mí + formación ---- */
+.about { display: grid; gap: 40px; margin-top: var(--space-2xl); }
+@media (min-width: 800px) { .about { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); } }
+.about p { color: var(--color-ink-soft); font-size: 16px; }
+.formacion { list-style: none; display: grid; gap: 12px; margin-top: 20px; }
+.formacion li {
+  background: var(--color-paper-2); border: 1px solid var(--color-line);
+  border-radius: var(--radius-md); padding: 14px 18px; color: var(--color-ink);
+}
+.formacion li small { display: block; color: var(--color-ink-soft); font-size: 13px; margin-top: 2px; }
+
+/* ---- Contacto ---- */
+.contact-grid { display: grid; gap: 14px; margin-top: var(--space-2xl); }
+@media (min-width: 700px) { .contact-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.contact-card {
+  display: block; background: var(--color-paper-2); border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg); padding: 24px; text-decoration: none; color: var(--color-ink);
+  transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out), border-color var(--dur-base) var(--ease-out);
+}
+.contact-card:hover { transform: translateY(-3px); border-color: var(--color-accent-line); box-shadow: var(--shadow-glow); }
+.contact-card:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 3px; }
+.contact-card .k { font-size: 13px; color: var(--color-accent); font-weight: 600; margin-bottom: 6px; }
+.contact-card .v { font-family: var(--font-display); font-weight: 600; font-size: 18px; }
+
+/* ---- Footer (Ft5 declaración) ---- */
+footer {
+  border-top: 1px solid var(--color-line); padding: 64px 0 48px; margin-top: 32px; text-align: center;
+}
+footer .statement { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.4rem, 3vw, 2rem); letter-spacing: -0.02em; margin-bottom: 20px; }
+footer .flinks { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
+footer .flinks a { color: var(--color-ink-soft); text-decoration: none; font-size: 14px; transition: color var(--dur-fast) var(--ease-out); }
+footer .flinks a:hover { color: var(--color-ink); }
+footer .flinks a:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; border-radius: 4px; }
+footer .copy { color: var(--color-ink-soft); font-size: 13px; }
+
+/* ---- Responsive ---- */
+@media (max-width: 640px) {
+  .nav-links { display: none; }
+  .hero { padding: 150px 0 88px; }
+  section { padding: var(--space-2xl) 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-delay: 0ms !important; }
+  html { scroll-behavior: auto; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAV (píldora flotante) ===== -->
+<nav class="nav" aria-label="Navegación principal">
+  <a class="wordmark" href="#top">[Nombre] · Sonido</a>
+  <div class="nav-links">
+    <a href="#que-hago">Qué hago</a>
+    <a href="#trabajos">Trabajos</a>
+    <a href="#sobre-mi">Sobre mí</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+  <a class="btn sm nav-cta" href="#contacto">Hablemos</a>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero" id="top">
+  <div class="wrap">
+    <span class="tag fade">Sonidista · Grabación, mezcla y masterización</span>
+    <h1 class="fade d2">Tu música, con el sonido que merece.</h1>
+    <p class="fade d3">Grabo, edito, mezclo y masterizo música para artistas y proyectos. Escucha mi trabajo y conversemos el tuyo.</p>
+    <div class="ctas fade d3">
+      <a class="btn" href="#trabajos">Escuchar mi trabajo</a>
+      <a class="btn ghost" href="#contacto">Hablemos</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ===== QUÉ HAGO (proceso) ===== -->
+  <section id="que-hago">
+    <div class="wrap">
+      <h2>Qué hago</h2>
+      <p class="lead" style="margin-top: 12px;">Si estás partiendo, esto es lo que significa cada etapa — de la idea al master.</p>
+      <div class="process">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>Grabar</h3>
+          <p>Capturo tu música en el estudio: voces, instrumentos y tomas, con micrófonos y equipo profesional para que el audio nazca limpio.</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>Editar</h3>
+          <p>Limpio y ordeno lo grabado: corrijo tiempos, quito ruidos y dejo cada pista lista para trabajar.</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>Mezclar</h3>
+          <p>Equilibro la canción: volúmenes, paneos, ecualización y efectos, para que cada elemento ocupe su lugar.</p>
+        </div>
+        <div class="step">
+          <div class="num">4</div>
+          <h3>Masterizar</h3>
+          <p>El toque final: preparo el audio para que suene parejo y con el volumen correcto en Spotify, vinilo o donde lo publiques.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TRABAJOS (grid de proyectos) ===== -->
+  <section id="trabajos">
+    <div class="wrap">
+      <h2>Trabajos</h2>
+      <p class="lead" style="margin-top: 12px;">Algo de lo que he grabado, mezclado y masterizado. Cada tema indica mi rol.</p>
+      <div class="works">
+        <!-- Temas en los que participé. Cada player indica mi rol. -->
+        <div class="work">
+          <iframe src="https://open.spotify.com/embed/track/176B1uax0c0DXTp8tUmjZQ?utm_source=generator" title="[Artista] — [Canción]" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+          <div class="cap">
+            <h3>[Artista] — [Canción]</h3>
+            <p>[Rol: grabación · mezcla · masterización]</p>
+          </div>
+        </div>
+        <div class="work">
+          <iframe src="https://open.spotify.com/embed/track/2MiNP6rYYO3djBWjLghIjx?utm_source=generator" title="[Artista] — [Canción]" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+          <div class="cap">
+            <h3>[Artista] — [Canción]</h3>
+            <p>[Rol: mezcla · masterización]</p>
+          </div>
+        </div>
+        <div class="work">
+          <iframe src="https://open.spotify.com/embed/track/4Hih8kLdG1dNLNk6ay8LKf?utm_source=generator" title="[Artista] — [Canción]" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+          <div class="cap">
+            <h3>[Artista] — [Canción]</h3>
+            <p>[Rol: grabación · edición]</p>
+          </div>
+        </div>
+        <div class="work">
+          <iframe src="https://open.spotify.com/embed/track/5MlqEoZQ0N7SbaAGawgXlP?utm_source=generator" title="[Artista] — [Canción]" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+          <div class="cap">
+            <h3>[Artista] — [Canción]</h3>
+            <p>[Rol: masterización]</p>
+          </div>
+        </div>
+      </div>
+      <div class="works-more">
+        <a class="btn ghost" href="https://open.spotify.com/playlist/71UkSNEJ6xoj3UVgApEGRS" target="_blank" rel="noopener">Ver la lista completa en Spotify</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SOBRE MÍ + FORMACIÓN ===== -->
+  <section id="sobre-mi">
+    <div class="wrap">
+      <h2>Sobre mí</h2>
+      <div class="about">
+        <div>
+          <p>[Cuenta tu historia: cuánto llevas como sonidista, qué te motiva, con qué géneros has trabajado y por qué disfrutas hacer que la música suene bien.]</p>
+          <p style="margin-top: 16px;">[Una línea extra opcional: tu enfoque de trabajo, por ejemplo "trabajo codo a codo con cada artista hasta que la canción suene como la imaginaste".]</p>
+        </div>
+        <div>
+          <h3>Formación</h3>
+          <ul class="formacion">
+            <li>[Curso / estudio] <small>[Institución]</small></li>
+            <li>[Curso / certificación] <small>[Institución]</small></li>
+            <li>[Título / diplomado] <small>[Institución]</small></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACTO ===== -->
+  <section id="contacto">
+    <div class="wrap" style="text-align: center;">
+      <h2>Hablemos de tu proyecto</h2>
+      <p class="lead" style="margin: 12px auto 0;">Cuéntame qué tienes en mente y te respondo con una idea de cómo trabajarlo. Sin compromiso.</p>
+      <div class="contact-grid" style="text-align: left;">
+        <a class="contact-card" href="https://wa.me/569XXXXXXXX?text=Hola%2C%20quiero%20trabajar%20en%20un%20proyecto" target="_blank" rel="noopener">
+          <div class="k">WhatsApp</div>
+          <div class="v">+56 9 XXXX XXXX</div>
+        </a>
+        <a class="contact-card" href="mailto:[hola@tudominio.cl]">
+          <div class="k">Email</div>
+          <div class="v">[hola@tudominio.cl]</div>
+        </a>
+        <a class="contact-card" href="https://instagram.com/[tu_usuario]" target="_blank" rel="noopener">
+          <div class="k">Instagram</div>
+          <div class="v">[@tu_usuario]</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== FOOTER (declaración) ===== -->
+<footer>
+  <div class="wrap">
+    <div class="statement">Música que suena como debe sonar.</div>
+    <div class="flinks">
+      <a href="https://instagram.com/[tu_usuario]" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://open.spotify.com/playlist/71UkSNEJ6xoj3UVgApEGRS" target="_blank" rel="noopener">Spotify</a>
+      <a href="mailto:[hola@tudominio.cl]">Email</a>
+    </div>
+    <div class="copy">© [Año] [Nombre] · Sonidista</div>
+  </div>
+</footer>
+
+</body>
+</html>
