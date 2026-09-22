@@ -135,7 +135,16 @@ section { padding: var(--space-3xl) 0; }
 .btn.sm { padding: 9px 16px; font-size: 14px; }
 
 /* ---- Hero ---- */
-.hero { padding: 180px 0 120px; text-align: center; }
+.hero { position: relative; overflow: hidden; padding: 180px 0 120px; text-align: center; }
+.hero-bg {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background: url("assets/tidal.png") center/contain no-repeat;
+  opacity: 0.22;
+  filter: blur(1px) brightness(0.95);
+  -webkit-mask-image: radial-gradient(120% 100% at 50% 45%, #000 30%, transparent 80%);
+  mask-image: radial-gradient(120% 100% at 50% 45%, #000 30%, transparent 80%);
+}
+.hero .wrap { position: relative; z-index: 1; }
 .hero .tag {
   display: inline-block; font-size: 13px; font-weight: 600; color: var(--color-accent);
   background: var(--color-hover); border: 1px solid var(--color-accent-line);
@@ -180,16 +189,6 @@ section { padding: var(--space-3xl) 0; }
 .work .cap h3 { margin-bottom: 2px; }
 .work .cap p { color: var(--color-ink-soft); font-size: 14px; }
 .works-more { margin-top: var(--space-xl); text-align: center; }
-
-/* ---- Créditos (proof) ---- */
-.proof {
-  display: grid; gap: 20px; align-items: center; margin-top: var(--space-xl);
-  padding: 20px; background: var(--color-paper-2); border: 1px solid var(--color-line); border-radius: var(--radius-lg);
-}
-@media (min-width: 700px) { .proof { grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); } }
-.proof h3 { margin-bottom: 6px; }
-.proof p { color: var(--color-ink-soft); font-size: 14.5px; }
-.proof img { width: 100%; height: auto; border-radius: var(--radius-md); border: 1px solid var(--color-line); }
 
 /* ---- En el estudio (galería) ---- */
 .gallery { columns: 3 260px; column-gap: 14px; margin-top: var(--space-2xl); }
@@ -267,6 +266,7 @@ footer .copy { color: var(--color-ink-soft); font-size: 13px; }
 
 <!-- ===== HERO ===== -->
 <header class="hero" id="top">
+  <div class="hero-bg" aria-hidden="true"></div>
   <div class="wrap">
     <span class="tag fade">Sonidista · Grabación, mezcla y masterización</span>
     <h1 class="fade d2">Tu música, con el sonido que merece.</h1>
@@ -348,14 +348,6 @@ footer .copy { color: var(--color-ink-soft); font-size: 13px; }
       </div>
       <div class="works-more">
         <a class="btn ghost" href="https://open.spotify.com/playlist/71UkSNEJ6xoj3UVgApEGRS" target="_blank" rel="noopener">Ver la lista completa en Spotify</a>
-      </div>
-
-      <div class="proof">
-        <div>
-          <h3>Créditos en plataformas</h3>
-          <p>Mi nombre aparece en los créditos de las plataformas donde se publica la música.</p>
-        </div>
-        <img src="assets/tidal.png" alt="Captura de créditos en Tidal" loading="lazy">
       </div>
     </div>
   </section>
